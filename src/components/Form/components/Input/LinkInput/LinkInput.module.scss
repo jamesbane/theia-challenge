@@ -1,0 +1,132 @@
+@import "/src/styles/mixins/breakpoints";
+@import "/src/styles/variables/common";
+
+.container {
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid #e5e7e9;
+  padding: 0;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  background-color: $color-light;
+
+  @include breakpoint("sm-max") {
+    height: 40px;
+  }
+
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active {
+    -webkit-box-shadow: inset 0 0 0 50px $color-light;
+    color: $color-medium !important;
+    -webkit-text-fill-color: $color-medium !important;
+  }
+
+  &:focus {
+    box-shadow: none;
+  }
+
+  :global {
+    .ant-input {
+      font-family: $font-primary;
+      font-size: 15px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 12px;
+      letter-spacing: normal;
+      text-align: left;
+      color: $color-new-dark;
+      background-color: $color-light;
+
+      @include breakpoint("sm-max") {
+        font-size: 13px;
+      }
+
+      &:focus {
+        box-shadow: none !important;
+      }
+
+      &:-webkit-autofill,
+      &:-webkit-autofill:hover,
+      &:-webkit-autofill:focus,
+      &:-webkit-autofill:active {
+        -webkit-box-shadow: inset 0 0 0 50px $color-light;
+        color: $color-medium !important;
+        -webkit-text-fill-color: $color-medium !important;
+      }
+
+      &::placeholder {
+        font-weight: 500;
+        color: $color-new-light;
+
+        @include breakpoint("sm-max") {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+
+  &:global.ant-input-affix-wrapper {
+    &:hover {
+      border-bottom: 1px solid $color-blue;
+    }
+  }
+
+  &:global.ant-input-affix-wrapper-disabled {
+    background-color: #f5f7f9;
+  }
+
+  &:global.ant-input-affix-wrapper-focused {
+    box-shadow: none;
+    border-bottom: 1px solid $color-blue;
+  }
+}
+
+.containerSmall {
+  height: 37px;
+
+  :global {
+    .ant-input {
+      font-size: 13px;
+    }
+  }
+}
+
+.containerIcon {
+  padding: 0 15px 0 21.5px;
+
+  :global {
+    .ant-input {
+      margin-left: 14.5px;
+    }
+  }
+}
+
+.containerLight {
+  background-color: $bg-light-darker;
+  :global {
+    .ant-input {
+      background-color: $bg-light-darker;
+    }
+  }
+}
+
+.prefix {
+  max-width: 16.5px;
+  max-height: 16.5px;
+}
+
+.link {
+  font-family: $font-primary;
+  font-size: 13px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.21;
+  letter-spacing: normal;
+  text-align: right;
+  color: $color-blue;
+}

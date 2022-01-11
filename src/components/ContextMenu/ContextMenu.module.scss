@@ -1,0 +1,83 @@
+@import "/src/styles/variables/common";
+@import "/src/styles/mixins/breakpoints";
+@import "/src/styles/animations";
+
+.container {
+  padding: 10px 0 !important;
+  min-width: 107px;
+  box-shadow: 0.5px 4.5px 14.5px 0 rgba(0, 0, 0, 0.17) !important;
+  border-radius: 15px !important;
+}
+
+.containerClass {
+  padding: 0
+}
+
+.items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.itemPopconfirm {
+  cursor: pointer;
+  padding: 5px 25px;
+  font-family: $font-primary;
+  font-size: 12px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  text-align: left;
+  color: $color-dark;
+
+  &:hover {
+    background: #e7eaf0;
+  }
+}
+
+.item {
+  cursor: pointer;
+  padding: 5px 25px;
+
+  font-family: $font-primary;
+  font-size: 12px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  text-align: left;
+  color: $color-dark;
+
+  &:hover {
+    background: #e7eaf0;
+  }
+}
+
+.itemDownload {
+  cursor: pointer;
+  font-family: $font-primary;
+  font-size: 12px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  text-align: left;
+  color: $color-dark;
+
+  &:hover {
+    background: #e7eaf0;
+  }
+
+  a {
+    padding: 5px 25px;
+    display: block;
+
+    &:hover {
+      color: $color-dark;
+    }
+  }
+}

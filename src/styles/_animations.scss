@@ -1,0 +1,52 @@
+$opacity-pulse: opacityPulse 2s ease-in-out infinite;
+$rotate-360: rotate360 1s linear infinite;
+
+@mixin animateFloatSquare($name: float, $distance: 15px, $duration: 15s, $easing: ease-in-out) {
+  animation: $name $duration $easing infinite alternate;
+
+  @keyframes #{$name} {
+    0% {
+      transform: translate(0, 0);
+    }
+    20% {
+      transform: translate(0, -$distance);
+    }
+    40% {
+      transform: translate(-$distance, 0);
+    }
+    60% {
+      transform: translate(0, $distance);
+    }
+    80% {
+      transform: translate($distance, 0);
+    }
+    100% {
+      transform: translate(0, -$distance);
+    }
+  }
+}
+
+@keyframes opacityPulse {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+@keyframes rotate360 {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

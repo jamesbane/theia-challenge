@@ -1,0 +1,46 @@
+@import "/src/styles/mixins/breakpoints";
+@import "/src/styles/variables/common";
+
+.title {
+  font-family: $font-primary;
+  font-size: 25px;
+  font-weight: 800;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 0.96;
+  letter-spacing: normal;
+  text-align: center;
+  color: $color-dark;
+
+  margin: 20px 0 0;
+}
+
+.text {
+  font-family: $font-primary;
+  font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.07;
+  letter-spacing: normal;
+  text-align: center;
+  color: $color-medium;
+  margin: 7px 0 0;
+}
+
+.loading {
+  display: block;
+  margin: 0 auto;
+  width: 41px;
+  animation: rotate 0.5s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,91 @@
+@import "/src/styles/variables/common";
+@import "/src/styles/mixins/breakpoints";
+@import "/src/styles/animations";
+
+.container {
+  background: $bg-white;
+  border: solid 1px #E5E5E5;
+  padding: 30px;
+  border-radius: 15px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  transition: all 0.15s ease-out;
+
+  &:hover {
+    transform: scale(1.01);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+  }
+
+  &:active {
+    transition: none;
+    transform: scale(1);
+    box-shadow: none;
+  }
+
+  &.loading {
+    background: $bg-loading;
+    border-color: $bg-loading;
+
+    animation: $opacity-pulse;
+  }
+}
+
+.avatar {
+  width: 68px;
+  height: 68px;
+  flex-shrink: 0;
+
+  @include breakpoint("sm-max") {
+    width: 59px;
+    height: 59px;
+  }
+}
+
+.name {
+  font-family: $font-primary;
+  font-size: 18px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-align: left;
+  color: $color-dark;
+
+  margin: 15px 0 0;
+
+  @include breakpoint("sm-max") {
+    font-size: 13px;
+  }
+
+  .loading & {
+    color: transparent;
+    height: 18px;
+    width: 50%;
+    background: $bg-loading-layer;
+    border-radius: 10px;
+  }
+}
+
+.address {
+  font-family: $font-primary;
+  font-size: 12px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: 0.3px;
+  text-align: center;
+  color: $color-medium;
+  margin-top: 5px;
+
+  @include breakpoint("sm-max") {
+    font-size: 10px;
+    margin-top: 3px;
+  }
+}

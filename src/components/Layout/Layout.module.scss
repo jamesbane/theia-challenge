@@ -1,0 +1,54 @@
+@import "/src/styles/mixins/breakpoints";
+@import "/src/styles/variables/common";
+
+.container {
+}
+
+.locked {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.main {
+  width: 100vw;
+  overflow: visible;
+  padding-top: 72.5px;
+  min-height: calc(100vh - 200px);
+
+  @include breakpoint("sm-max") {
+    padding-top: 46px;
+    min-height: calc(100vh - 174px);
+  }
+
+  .dashboard & {
+    min-height: 100vh;
+    background: $bg-white;
+  }
+}
+
+.fade {
+  position: fixed;
+  z-index: 998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0, 0.5);
+
+  visibility: hidden;
+  opacity: 0;
+  transition: $transition-all;
+
+  &.fadeActive {
+    visibility: visible;
+    opacity: 1;
+  }
+}

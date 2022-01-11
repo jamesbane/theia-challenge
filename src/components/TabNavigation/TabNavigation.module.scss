@@ -1,0 +1,41 @@
+@import "/src/styles/variables/common";
+@import "/src/styles/mixins/breakpoints";
+@import "/src/styles/animations";
+
+.tabs {
+  background: $bg-white;
+  box-shadow: 0 0 10.5px 0 rgba(0, 0, 0, 0.05);
+
+  :global {
+    .ant-tabs-nav {
+      margin-bottom: 0;
+      height: 36px;
+      border-bottom: none;
+    }
+
+    .ant-tabs-nav:before {
+      border-bottom: none;
+    }
+
+    .ant-tabs-tab-btn {
+      font-family: $font-primary;
+      font-size: 12px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1;
+      letter-spacing: normal;
+      text-align: center;
+      color: $color-medium;
+    }
+
+    .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+      color: $color-blue;
+    }
+
+    .ant-tabs-ink-bar {
+      background: $color-blue;
+      height: 2px;
+    }
+  }
+}

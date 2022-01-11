@@ -1,0 +1,70 @@
+@import "/src/styles/mixins/breakpoints";
+@import "/src/styles/variables/common";
+
+.container {
+  border-radius: 7.5px;
+  border: 0.5px solid $color-border;
+  padding: 10px 15px;
+
+  font-family: $font-primary;
+  font-size: 15px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 12px;
+  letter-spacing: normal;
+  text-align: left;
+  background-color: $color-light;
+
+  @include breakpoint("sm-max") {
+    font-size: 13px;
+  }
+
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active {
+    -webkit-box-shadow: inset 0 0 0 50px $color-grey;
+    color: $color-medium !important;
+    -webkit-text-fill-color: $color-medium !important;
+  }
+
+  &::placeholder {
+    font-weight: 500;
+    color: $color-new-light;
+
+    @include breakpoint("sm-max") {
+      font-size: 13px;
+    }
+  }
+
+  :global {
+    .ant-input {
+      font-family: $font-primary;
+      font-size: 15px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 12px;
+      letter-spacing: normal;
+      text-align: left;
+      color: $color-new-dark;
+      background-color: $color-light;
+
+      &:-webkit-autofill,
+      &:-webkit-autofill:hover,
+      &:-webkit-autofill:focus,
+      &:-webkit-autofill:active {
+        -webkit-box-shadow: inset 0 0 0 50px $color-grey;
+        color: $color-medium !important;
+        -webkit-text-fill-color: $color-medium !important;
+      }
+    }
+  }
+}
+
+.containerSmall {
+  font-size: 13px;
+  min-height: 82px;
+  max-height: 82px;
+}

@@ -1,0 +1,130 @@
+@import "/src/styles/variables/common";
+@import "/src/styles/mixins/breakpoints";
+@import "/src/styles/animations";
+
+.container {
+
+}
+
+.top {
+  display: flex;
+  align-items: flex-end;
+  margin: 0 0 30px;
+
+  @include breakpoint("sm-max") {
+    flex-wrap: wrap;
+    margin: 0 0 18px;
+  }
+}
+
+.title {
+  font-family: $font-primary;
+  font-size: 35px;
+  font-weight: 800;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 0.85;
+  letter-spacing: normal;
+  text-align: left;
+  color: $color-dark;
+
+  margin: 0 15px 0 0;
+
+  .loading & {
+    color: transparent;
+    background: $bg-loading;
+    border-radius: 20px;
+    animation: $opacity-pulse;
+  }
+
+  @include breakpoint("sm-max") {
+    font-size: 28px;
+  }
+}
+
+.button {
+  font-size: 15px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-align: right;
+  color: $color-purple;
+
+  align-items: flex-end;
+
+  @include breakpoint("sm-max") {
+    font-size: 12px;
+    margin-top: 10px;
+  }
+
+  .loading & {
+    display: none;
+  }
+}
+
+.buttonIcon {
+  min-height: 10px;
+  min-width: 11.5px;
+  margin-bottom: 2px;
+}
+
+.tracks {
+  list-style: none;
+  padding: 0;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 277px);
+  grid-gap: 24px;
+
+  @include breakpoint("sm-max") {
+    overflow-x: auto;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+
+    position: relative;
+    width: calc(100% + 46px);
+    padding: 0 23px;
+    left: -23px;
+
+    .scrollType & {
+      display: flex;
+    }
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.track {
+  @include breakpoint("sm-max") {
+    min-width: 250px;
+  }
+}
+
+.spinner {
+  display: block;
+  margin: 40px auto;
+  height: 40px;
+  width: auto;
+
+  animation: $rotate-360;
+}
+
+.spinnerScroll {
+  margin: 0;
+  align-self: center;
+}
+
+@keyframes appear {
+  from {
+    height: 0;
+    opacity: 0;
+  }
+
+  to {
+    height: 40px;
+    opacity: 1;
+  }
+}

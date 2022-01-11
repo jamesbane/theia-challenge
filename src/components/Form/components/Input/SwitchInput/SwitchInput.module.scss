@@ -1,0 +1,41 @@
+@import "/src/styles/mixins/breakpoints";
+@import "/src/styles/variables/common";
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.label {
+  font-family: $font-primary;
+  font-size: 15px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-align: left;
+  color: $color-dark;
+}
+
+
+.switch {
+  height: 16px;
+  min-width: 26px;
+  width: 26px;
+
+  &:global.ant-switch-checked {
+    background-color: $color-blue;
+
+    .ant-switch-handle {
+      left: calc(100% - 14px);
+    }
+  }
+
+  :global {
+    .ant-switch-handle {
+      width: 12px;
+      height: 12px;
+    }
+  }
+}

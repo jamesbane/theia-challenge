@@ -1,0 +1,141 @@
+@import "/src/styles/mixins/breakpoints";
+@import "/src/styles/variables/common";
+@import "/src/styles/animations";
+
+.heading {
+  font-family: $font-primary;
+  font-size: 18px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.33;
+  letter-spacing: normal;
+  text-align: center;
+  color: $color-dark;
+
+  margin: 0;
+
+  @include breakpoint("sm-max") {
+    font-size: 15.7px;
+  }
+}
+
+.headingPurchase {
+  font-family: $font-primary;
+  font-size: 25px;
+  font-weight: 800;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 0.96;
+  letter-spacing: normal;
+  text-align: center;
+  color: $font-dark;
+}
+
+.subheading {
+  font-family: $font-primary;
+  font-size: 16px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-align: left;
+  color: #2c2a38;
+
+  margin: 24px 0 0;
+
+  @include breakpoint("sm-max") {
+    font-size: 13.8px;
+    margin-top: 20px;
+  }
+}
+
+.bold {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.amountInput {
+  margin-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #edeff4;
+
+
+  @include breakpoint("sm-max") {
+    margin-top: 15px;
+    padding-bottom: 15px;
+  }
+}
+
+.info {
+  list-style: none;
+  margin: 20px 0 0;
+  padding: 0;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-family: $font-primary;
+  font-size: 15px;
+  line-height: 1;
+
+  @include breakpoint("sm-max") {
+    font-size: 13px;
+  }
+
+  &:not(:first-child) {
+    margin-top: 22px;
+  }
+}
+
+.label {
+  color: $color-medium;
+  font-weight: 500;
+}
+
+.value {
+  font-weight: bold;
+  color: $color-dark;
+}
+
+.button {
+  width: 100%;
+  margin-top: 23px;
+
+  @include breakpoint("sm-max") {
+    margin-top: 20px;
+  }
+}
+
+
+.loader {
+  z-index: 9999;
+  display: block;
+  .spinner {
+    transform: translate(-50%, -50%);
+
+    display: block;
+    margin: 0 auto 20px;
+    height: 40px;
+    width: auto;
+
+    animation: $rotate-360;
+  }
+}
+
+.purchaseDescription {
+  margin-top: 12px;
+  font-family: $font-primary;;
+  font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.07;
+  letter-spacing: normal;
+  text-align: center;
+  color: #818895;
+}

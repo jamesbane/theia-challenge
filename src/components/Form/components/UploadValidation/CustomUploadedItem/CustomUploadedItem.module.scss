@@ -1,0 +1,75 @@
+@import "/src/styles/variables/common";
+@import "/src/styles/mixins/breakpoints";
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .uploadItem {
+      display: flex;
+      align-items: center;
+      margin-right: 20px;
+      width: 70%;
+      .uploadImg {
+        width: 67px;
+        margin-right: 20px;
+      }
+    }
+
+    .darkText {
+      font-family: $font-primary;
+      font-size: 15px;
+      font-weight: bold;
+      color: $color-new-dark;
+      text-align: left;
+      overflow-wrap: anywhere;
+
+      @include breakpoint("sm-max") {
+        font-size: 13px;
+      }
+    }
+
+    .greyText {
+      font-family: $font-primary;
+      font-size: 10px;
+      font-weight: normal;
+      color: #83878d;
+
+      @include breakpoint("sm-max") {
+        font-size: 9px;
+      }
+    }
+
+    .afterUploadItem {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 10px;
+
+      .leftItem {
+        display: flex;
+        align-items: center;
+
+        .reuploadIcon {
+          width: 12px;
+          margin-right: 5px;
+        }
+
+        p {
+          font-family: $font-primary;
+          font-size: 12px;
+          font-weight: 500;
+          line-height: 2;
+          color: $color-blue;
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .uploadBtn {
+      border-radius: 6px;
+      background-image: linear-gradient(to right, #f2477e, #4651ed);
+      color: white;
+      padding: 10px 20px;
+    }
+}

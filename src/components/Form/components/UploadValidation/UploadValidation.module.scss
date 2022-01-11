@@ -1,0 +1,55 @@
+@import "/src/styles/variables/common";
+@import "/src/styles/mixins/breakpoints";
+
+.container {
+  position: relative;
+}
+
+.imagePreview {
+  width: 100%;
+}
+
+.audioPreview {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.uploadContainer {
+  background-color: $bg-white;
+  padding: 10px;
+  display: flex;
+
+  @include breakpoint("sm-max") {
+    padding: 10px;
+    border-radius: 5px;
+  }
+}
+
+.headerCustom {
+  height: 40px;
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-bottom: 15px;
+
+  .changeFile {
+    font-family: $font-primary;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.6;
+    color: $color-new-skin-blue;
+    margin-bottom: 0;
+  }
+}
+
+.preview {
+  font-family: $font-primary;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.33;
+  color: $color-new-dark;
+  margin-bottom: 0;
+}

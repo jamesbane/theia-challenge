@@ -1,0 +1,179 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Components/Button Basic 1`] = `
+<button
+  className="button"
+  onClick={[Function]}
+>
+  <span
+    className="text"
+  >
+    Basic
+  </span>
+</button>
+`;
+
+exports[`Storyshots Components/Button Colors 1`] = `
+<div>
+  <button
+    className="button buttonPrimary buttonBlue"
+    onClick={[Function]}
+  >
+    <span
+      className="text"
+    >
+      Primary & Blue
+    </span>
+  </button>
+  <button
+    className="button buttonPrimary buttonLight"
+    onClick={[Function]}
+  >
+    <span
+      className="text"
+    >
+      Primary & Light
+    </span>
+  </button>
+  <button
+    className="button buttonPrimary buttonGray"
+    onClick={[Function]}
+  >
+    <span
+      className="text"
+    >
+      Primary & Gray
+    </span>
+  </button>
+  <button
+    className="button buttonPrimary buttonGrayDark"
+    onClick={[Function]}
+  >
+    <span
+      className="text"
+    >
+      Primary & GrayDark
+    </span>
+  </button>
+  <button
+    className="button buttonPrimary buttonGradient"
+    onClick={[Function]}
+  >
+    <span
+      className="text"
+    >
+      Primary & Gradient
+    </span>
+  </button>
+</div>
+`;
+
+exports[`Storyshots Components/Button Primary 1`] = `
+<button
+  className="button buttonPrimary"
+  onClick={[Function]}
+>
+  <span
+    className="text"
+  >
+    Primary
+  </span>
+</button>
+`;
+
+exports[`Storyshots Components/Button Size 1`] = `
+<div>
+  <button
+    className="button buttonSmall"
+    onClick={[Function]}
+  >
+    <span
+      className="text"
+    >
+      Small
+    </span>
+  </button>
+  <button
+    className="button buttonCompact"
+    onClick={[Function]}
+  >
+    <span
+      className="text"
+    >
+      Compact
+    </span>
+  </button>
+  <button
+    className="button buttonPrimary"
+    onClick={[Function]}
+  >
+    <span
+      className="text"
+    >
+      Primary
+    </span>
+  </button>
+</div>
+`;
+
+exports[`Storyshots Components/Button With Icon 1`] = `
+<div>
+  <button
+    className="button buttonPrimary"
+    onClick={[Function]}
+  >
+    <span
+      className="text"
+    >
+      Button with Icon
+    </span>
+    <img
+      alt="icon"
+      className="icon"
+      src="notify.png"
+      style={
+        Object {
+          "width": 20,
+        }
+      }
+    />
+  </button>
+  <button
+    className="button buttonPrimary"
+    onClick={[Function]}
+  >
+    <img
+      alt="icon"
+      className="icon iconAlignStart"
+      src="notify.png"
+      style={
+        Object {
+          "width": 20,
+        }
+      }
+    />
+    <span
+      className="text"
+    >
+      Button with Icon
+    </span>
+  </button>
+</div>
+`;
+
+exports[`Storyshots Components/Panel Basic 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="scroll"
+    style={
+      Object {
+        "maxHeight": "none",
+      }
+    }
+  >
+    Panel Content
+  </div>
+</div>
+`;

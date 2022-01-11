@@ -1,0 +1,1 @@
+export const LIST_LIMIT_LENGTH = 20;

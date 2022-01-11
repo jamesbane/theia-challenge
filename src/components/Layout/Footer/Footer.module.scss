@@ -1,0 +1,90 @@
+@import "/src/styles/variables/common";
+@import "/src/styles/mixins/breakpoints";
+
+
+.container {
+  padding-top: 68px;
+  padding-bottom: 31px;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0 14px;
+  border-bottom: 1px solid $color-border;
+
+  @include breakpoint("sm-max") {
+    flex-wrap: wrap;
+    padding: 0 0 10px;
+  }
+}
+
+.logo {
+  width: 109px;
+  margin: 0 20px 10px 0;
+  transition: $transition-all;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+
+  @include breakpoint("sm-max") {
+    max-width: 87px;
+  }
+}
+
+.social {
+  list-style: none;
+  margin: 0 0 10px;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+}
+
+.socialItem {
+  transition: $transition-all;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &:not(:first-child) {
+    margin-left: 47px;
+
+    @include breakpoint("sm-max") {
+      margin-left: 20px;
+    }
+  }
+}
+
+.socialIcon {
+  display: block;
+  max-width: 23px;
+  max-height: 23px;
+
+  @include breakpoint("sm-max") {
+    max-width: 18px;
+  }
+}
+
+.bottom {
+  padding-top: 29px;
+
+  font-family: $font-primary;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  color: $color-dark;
+
+  @include breakpoint("sm-max") {
+    padding-top: 17px;
+    font-size: 10px;
+    line-height: 1.5;
+  }
+}

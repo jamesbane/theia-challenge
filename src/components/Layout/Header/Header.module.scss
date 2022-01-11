@@ -1,0 +1,291 @@
+@import "/src/styles/variables/common";
+@import "/src/styles/mixins/breakpoints";
+
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background: transparent;
+  padding: 18.5px 0 16px;
+  box-sizing: border-box;
+  z-index: 999;
+  border-bottom: 1px solid $color-border;
+
+  background: $bg-white;
+  transition: $transition-all;
+
+  @include breakpoint("sm-max") {
+    padding: 10px 0;
+  }
+}
+
+.fullWidth {
+  max-width: none;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  @include breakpoint("sm-max") {
+    flex-shrink: 10;
+  }
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-left: 40px;
+
+  @include breakpoint("sm-max") {
+    margin-left: 10px;
+  }
+}
+
+.logo {
+  width: 109px;
+
+  @include breakpoint("md-max") {
+    max-width: 87px;
+    min-width: 40px;
+    width: 100%;
+    flex-shrink: 10;
+  }
+}
+
+.logoLink {
+  padding: 0;
+}
+
+.nav {
+}
+
+.menuWrapper {
+  width: 100%;
+  margin-left: 27px;
+
+  @include breakpoint("md-max") {
+    position: absolute;
+    z-index: -1;
+    overflow: hidden;
+    top: 100%;
+    left: 0;
+    background: $bg-light;
+    margin: 0;
+    height: calc(100vh - 66px);
+    overflow-y: auto;
+
+    transition: $transition-all;
+    transform-origin: top;
+    transform: scaleY(0) translateY(-100px);
+    opacity: 0;
+
+    .open & {
+      transform: scaleY(1) translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @include breakpoint("sm-max") {
+    height: calc(100vh - 42px);
+    overflow-y: auto;
+  }
+}
+
+.searchWrapper {
+  width: 100%;
+  max-width: 422px;
+  flex-shrink: 10;
+}
+
+.search {
+  width: 100%;
+
+  @include breakpoint("md-max") {
+    max-width: none;
+  }
+}
+
+.menuBody {
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  @include breakpoint("md-max") {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 23px 23px 28px;
+  }
+
+  @include breakpoint("sm-max") {
+    padding: 10px 23px 28px;
+  }
+}
+
+.menuActions {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 422px;
+
+  @media (max-width: 1180px) {
+    width: 85%;
+  }
+
+  @media (max-width: 1140px) {
+    width: 65%;
+  }
+
+  @media (max-width: 1075px) {
+    width: 50%;
+  }
+}
+
+.menu {
+  width: 100%;
+  list-style: none;
+  min-width: 0;
+  margin: 0 0 0 45px;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+
+  @include breakpoint("md-max") {
+    margin: 30px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  @include breakpoint("sm-max") {
+    margin: 15px 0 0 0;
+  }
+}
+
+.menuItem {
+  margin: 0;
+  padding: 0;
+
+  &:not(:first-child) {
+    margin-left: 30px;
+
+    @include breakpoint("md-max") {
+      margin: 15px 0 0;
+    }
+  }
+}
+
+.menuLink {
+  font-family: $font-primary;
+  font-size: 13px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-align: left;
+  color: #2e3345;
+  padding: 5px 0;
+
+  transition: $transition-all;
+
+  &:link {
+    text-decoration: none;
+  }
+
+  &:visited {
+  }
+
+  &:hover {
+    opacity: 0.5;
+    color: #2e3345;
+  }
+
+  &:active {
+  }
+}
+
+.menuLinkActive {
+}
+
+.button {
+  flex-shrink: 0;
+}
+
+.buttonNotify {
+  margin-left: 10px;
+}
+
+.buttonNotifyIcon {
+  width: 31px;
+  height: auto;
+}
+
+.hamburger {
+  margin-left: 23px;
+  flex-shrink: 0;
+}
+
+.dropdownWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchDropdownWrapper {
+  width: 100%;
+  position: fixed;
+  top: 73px;
+  left: 0;
+
+  background: #fff;
+  z-index: 999;
+
+  @include breakpoint("md-max") {
+    top: 0;
+  }
+}
+
+.searchDropdown {
+  height: calc(100vh - 73px);
+  background: #fafbfd;
+  //background: transparent;
+  //padding-top: 20px;
+
+  @include breakpoint("md-max") {
+    height: 100vh;
+  }
+
+  @include breakpoint("sm-max") {
+    height: 100vh;
+  }
+}
+
+.searchInputDropdown {
+  padding: 6px 23px;
+}
+
+.actions {
+  color: #fff;
+  background-color: $color-blue;
+  padding: 8px 18px;
+  border-radius: 25px;
+  line-height: 1;
+  font-weight: 600;
+  transition: all 0.15s ease-in;
+  cursor: pointer;
+}
+
+.actions:hover{
+  opacity: 0.8;
+}

@@ -1,0 +1,75 @@
+@import "/src/styles/mixins/breakpoints";
+@import "/src/styles/variables/common";
+
+@mixin box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  padding: 0 7px;
+  border: none;
+
+  font-family: $font-primary;
+  font-size: 13px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.66;
+  letter-spacing: normal;
+  text-align: left;
+  color: $color-dark;
+}
+
+.container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  @include box;
+
+  &:hover img {
+    opacity: 0.75;
+  }
+
+  &:disabled {
+    color: rgba($color-dark, 0.3);
+    box-shadow: none;
+
+    img {
+      opacity: 0.3;
+    }
+  }
+
+  img {
+    height: 10px;
+    min-height: auto;
+    min-width: auto;
+  }
+}
+
+.buttonLeft {
+  transform: rotateY(180deg);
+
+  &:hover {
+    box-shadow: none;
+    transform: rotateY(180deg);
+  }
+
+}
+
+.buttonSmall {
+  padding: 0;
+  width: 30px;
+}
+
+.label {
+  @include box();
+}
+
+.faded {
+  color: $color-medium;
+
+  margin-left: 5px;
+}

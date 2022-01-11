@@ -1,0 +1,27 @@
+@import "/src/styles/variables/common";
+@import "/src/styles/mixins/breakpoints";
+
+.container {
+  :global {
+    .ant-upload-picture-card-wrapper {
+      width: auto;
+    }
+
+    .ant-upload-list-text-container {
+      display: none;
+    }
+  }
+}
+
+.uploadBtn {
+    height: 35px;
+    padding: 0 20px;
+    margin-right: 10px;
+
+    span {
+      font-family: $font-primary;
+      font-size: 13px;
+      font-weight: bold;
+      line-height: 2;
+    }
+}

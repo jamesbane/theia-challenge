@@ -1,0 +1,274 @@
+@import "/src/styles/variables/common";
+@import "/src/styles/mixins/breakpoints";
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  appearance: none;
+  background: none;
+  line-height: 100%;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+  border: none;
+  color: $font-dark;
+  cursor: pointer;
+  transition: $transition-opacity;
+  white-space: nowrap;
+
+  font-family: $font-primary;
+
+
+  @include breakpoint("md-min") {
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+
+
+  &:disabled {
+    color: $color-medium;
+    cursor: not-allowed;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+// sizes
+
+.buttonPrimary {
+  padding: 0 33px;
+  border-radius: 25px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1;
+  height: 50px;
+  box-shadow: 1px 10px 20px 5px rgba(0, 0, 0, 0.13);
+
+  transition: $transition-all;
+
+  @include breakpoint("md-min") {
+    &:hover {
+      transform: scale(1.005);
+      opacity: 1;
+      box-shadow: 1.3px 10.4px 20px 10px rgba(0, 0, 0, 0.13);
+
+    }
+
+    &:active {
+      transform: scale(1);
+      transition: all 0s;
+    }
+  }
+
+
+  @include breakpoint("sm-max") {
+    height: 33px;
+    padding: 0 20px;
+    font-size: 12px;
+  }
+}
+
+.buttonCompact {
+  padding: 0 20px;
+  font-size: 15px;
+  font-weight: bold;
+  height: 38px;
+  letter-spacing: 0.33px;
+  border-radius: 19px;
+  line-height: 10.5px;
+}
+
+.buttonSmall {
+  padding: 0 17px;
+  font-size: 12px;
+  font-weight: 500;
+  height: 31px;
+  border-radius: 15.8px;
+
+  &:after, &:before {
+    border-radius: 15.8px;
+  }
+
+  &:after {
+    height: 13px;
+  }
+
+  @include breakpoint("sm-max") {
+    height: 27px;
+    font-size: 11px;
+    padding: 0 14px;
+
+    &:after {
+      height: 11px;
+    }
+  }
+}
+
+// styles
+
+.buttonBlue {
+  color: $color-light;
+  background-color: $color-blue;
+}
+
+.buttonLight {
+  background: $bg-white;
+  color: #000;
+}
+
+.buttonGray {
+  background-color: #c9d1dd;
+  color: white;
+}
+
+.buttonGrayDark {
+  background-color: #e5e7e9;
+  color: $color-dark;
+}
+
+.buttonGradient {
+  background-image: linear-gradient(to right, #f5477c, #3d4bee);
+  color: white;
+}
+
+.buttonGradientReverse {
+  background-image: linear-gradient(to right, #eaced7, #cbceea);
+  color: linear-gradient(to right, #f2477e, #4651ed);
+}
+
+.buttonGreen {
+}
+
+.buttonDisabled {
+  background-color: #f0f0f3;
+  color: #e5e5e5;
+
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.13);
+
+  &:hover {
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.13);
+    transform: none;
+  }
+}
+
+// MISC
+
+.buttonOutline {
+  border-style: solid;
+  border-width: 1px;
+  border-color: currentColor;
+  background: none;
+
+  &.buttonBlue {
+    background: none;
+    border: 1px solid $color-blue;
+    box-shadow: none;
+    color: $color-blue;
+  }
+
+  &.buttonGradient {
+    box-sizing: border-box;
+    position: relative;
+    border: solid 1px transparent;
+    background-clip: padding-box;
+
+    &:hover {
+      opacity: 1;
+
+      &:before, &:after {
+        opacity: 0.85;
+
+      }
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      display: block;
+      top: 0; right: 0; bottom: 0; left: 0;
+      z-index: -2;
+      margin: -1px;
+      background: linear-gradient(to right, #f5477c, #3d4bee);
+    }
+
+    &:after {
+      content: attr(text);
+      display: block;
+      margin: auto;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      color: transparent;
+      top: 0; right: 0; bottom: 0; left: 0;
+      z-index: 1;
+      background-image: linear-gradient(to right, #f5477c, #3d4bee);
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+    }
+  }
+}
+
+
+.icon {
+  display: inline-block;
+  line-height: 0;
+  min-width: 12px;
+  min-height: 12px;
+  margin-left: 7px;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  svg, path {
+    fill: currentColor;
+    border: currentColor;
+  }
+
+  &:only-child {
+    margin: 0;
+  }
+}
+
+.iconAlignStart {
+  margin-left: 0;
+  margin-right: 7px;
+}
+
+.spinner {
+  width: 20px;
+  animation: rotate 0.7s linear infinite, appear 0.15s ease-in forwards;
+  opacity: 0;
+
+  .buttonCompact & {
+    width: 15px;
+  }
+
+  .buttonSmall & {
+    width: 10px;
+  }
+
+}
+
+@keyframes appear {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

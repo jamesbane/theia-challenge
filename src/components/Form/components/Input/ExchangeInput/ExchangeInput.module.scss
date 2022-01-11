@@ -1,0 +1,143 @@
+@import "/src/styles/mixins/breakpoints";
+@import "/src/styles/variables/common";
+
+.container {
+  border: 1px solid $color-border;
+  border-radius: 15px;
+  padding: 10px 21px 10px 16px;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+
+  font-family: $font-primary;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-align: left;
+  color: $color-medium;
+}
+
+.bottom {
+  display: flex;
+  align-items: center;
+  margin-top: 0px;
+}
+
+.bottomRight {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 10px;
+}
+
+.icon {
+  width: 11px;
+  height: 17px;
+  background: $bg-light no-repeat center / cover;
+  border-radius: 50%;
+  margin-right: 7.5px;
+}
+
+.iconLabel {
+  font-family: $font-primary;;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 2.4;
+  color: #282828;
+  margin-bottom: 0;
+}
+
+.sign {
+  display: flex;
+  align-items: center;
+  // margin-left: 15px;
+
+  font-family: $font-primary;
+  font-size: 23px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-align: left;
+  color: $color-new-dark;
+}
+
+
+.input {
+  display: block;
+  // width: auto;
+  min-width: 0;
+  border: none;
+
+  font-family: $font-primary;
+  font-size: 18px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: left;
+  color: $color-new-dark;
+  //background-color: transparent !important;
+
+  &::placeholder {
+    color: $color-light;
+  }
+}
+
+
+.container {
+  :global {
+    .ant-input-number-disabled {
+      color: $color-medium;
+      background-color: transparent;
+    }
+
+
+    .ant-input-number-input {
+      padding: 0 30px 0 0;
+      height: auto;
+    }
+
+
+    .ant-input-number-handler {
+      padding: 0 5px;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ant-input-number-handler-wrap {
+      // width: 32px;
+      background: none;
+    }
+
+    .ant-input-number-handler-up, .ant-input-number-handler-down {
+      color: $color-medium;
+    }
+
+    .ant-input-number-handler-up-inner, .ant-input-number-handler-down-inner {
+      right: 10px;
+      color: $color-medium;
+    }
+
+    .ant-input-number-handler:active {
+      background: none;
+    }
+
+
+    .ant-input-number-handler:hover {
+      .ant-input-number-handler-up-inner, .ant-input-number-handler-down-inner {
+        color: $color-blue;
+        background: none;
+      }
+    }
+  }
+}

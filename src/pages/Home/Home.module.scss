@@ -1,0 +1,97 @@
+@import "/src/styles/variables/common";
+@import "/src/styles/mixins/breakpoints";
+
+.panelContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 30px;
+  grid-template-areas:
+    'menu panel panel'
+    'menu panel panel';
+  align-items: center;
+
+  .panelPie {
+    grid-area: menu;
+  }
+
+  .panelItem {
+    grid-area: panel;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    .panelIcon {
+      padding: 10px;
+      border-radius: 100%;
+      margin-right: 10px;
+      width: 60px;
+      height: 60px;
+      svg {
+        margin: auto;
+        width: 40px;
+        height: 40px;
+      }
+
+      &.blue {
+        background-color: #e0f2fd;
+
+        svg {
+          fill: #7dadf3;
+        }
+      }
+
+      &.purple {
+        background-color: #e8e3fb;
+        svg {
+          fill: #5a4cd6;
+        }
+      }
+      &.green {
+        background-color: #e3fde2;
+        svg {
+          fill: #b3efc4;
+        }
+      }
+      &.red {
+        background-color: #fadfd5;
+        svg {
+          fill: #f4a086;
+        }
+      }
+    }
+    .panelText {
+      font-size: 16px;
+    }
+
+    .panelValue {
+      font-size: 24px;
+      font-weight: bold;
+    }
+  }
+}
+
+.parameters {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .parameterItem {
+    flex: 1;
+    margin-right: 10px;
+    &>div {
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      overflow-wrap: break-word;
+
+      .infoValue {
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .infoText {
+        font-size: 16px;
+      }
+    }
+  }
+}
