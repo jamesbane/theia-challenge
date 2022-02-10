@@ -3,7 +3,7 @@ import Layout from '../../components/Layout';
 import Chart from 'kaktana-react-lightweight-charts'
 
 import style from './Home.module.scss';
-import {bnbPriceData, liveData} from "./data";
+import {liveData} from "./data";
 import moment from "moment";
 import PieChart from "../../components/PieChart";
 import Panel from "../../components/Panel";
@@ -16,6 +16,7 @@ import {
 } from '@ant-design/icons';
 import cn from "classnames";
 import {Select} from "antd";
+import axios from "axios";
 const { Option } = Select;
 
 
@@ -38,17 +39,16 @@ export default function Home() {
 
     useEffect(() => {
         const newData: any = [];
-        const startTime = moment().add(-monthOption, 'months').unix();
-        for (const key in bnbPriceData.data) {
-            const item = bnbPriceData.data[key];
-            if (parseInt(key) > startTime) {
+        axios.get(`https://api.coinmarketcap.com/data-api/v3/cryptocurrency/detail/chart?id=1839&range=${monthOption === 1 ? '1M' : monthOption === 2 ? '3M' : '1Y' }`).then(resp => {
+            for (const key in resp.data.data.points) {
+                const item = resp.data.data.points[key];
                 newData.push({
                     'time': (moment.unix(parseInt(key)).format('YYYY-MM-DD')),
                     'value': item.v[0]
                 })
             }
-        }
-        setData(newData);
+            setData(newData);
+        })
     }, [monthOption])
 
     return (
@@ -63,7 +63,14 @@ export default function Home() {
                             <Option value={12}>1 year</Option>
                         </Select>
                     </div>
-                    <Chart options={options} areaSeries={[{data: data}]} autoWidth height={320}/>
+                    <Chart
+                        options={options}
+                        areaSeries={[{data: data}]}
+                        autoWidth
+                        height={320}
+                        from={data.length > 0 ? data[0]['time'] : 0}
+                        to={data.length > 0 ? data[data.length-1]['time'] : 0}
+                    />
 
                     <h1>Live data</h1>
                     <div className={style.panelContainer}>
@@ -121,28 +128,28 @@ export default function Home() {
                     </div>
 
                     <h1>FAIR Rolling SAFE Parameters</h1>
-                    <div className={style.parameters}>
-                        <Panel wrapperClass={style.parameterItem}>
+                    <div className={cn(style.parameters, 'ant-row')}>
+                        <Panel wrapperClass={cn(style.parameterItem, 'ant-col-xs-24 ant-col-sm-12 ant-col-md-7 ant-col-lg-4')}>
                             <InfoCircleOutlined className={'infoIcon'}/>
                             <div className={style.infoValue}>{liveData.equityPercentage}</div>
                             <div className={style.infoText}>Investor equity allocation</div>
                         </Panel>
-                        <Panel wrapperClass={style.parameterItem}>
+                        <Panel wrapperClass={cn(style.parameterItem, 'ant-col-xs-24 ant-col-sm-12 ant-col-md-7 ant-col-lg-4')}>
                             <InfoCircleOutlined className={'infoIcon'}/>
                             <div className={style.infoValue}>{liveData.stakeHolderEquity}</div>
                             <div className={style.infoText}>Stakeholders equity allocation</div>
                         </Panel>
-                        <Panel wrapperClass={style.parameterItem}>
+                        <Panel wrapperClass={cn(style.parameterItem, 'ant-col-xs-24 ant-col-sm-12 ant-col-md-7 ant-col-lg-4')}>
                             <InfoCircleOutlined className={'infoIcon'}/>
                             <div className={style.infoValue}>12 months</div>
                             <div className={style.infoText}>Lock-up period</div>
                         </Panel>
-                        <Panel wrapperClass={style.parameterItem}>
+                        <Panel wrapperClass={cn(style.parameterItem, 'ant-col-xs-24 ant-col-sm-12 ant-col-md-7 ant-col-lg-4')}>
                             <InfoCircleOutlined className={'infoIcon'}/>
                             <div className={style.infoValue}>USDC</div>
                             <div className={style.infoText}>Reserve currency</div>
                         </Panel>
-                        <Panel wrapperClass={style.parameterItem}>
+                        <Panel wrapperClass={cn(style.parameterItem, 'ant-col-xs-24 ant-col-sm-12 ant-col-md-7 ant-col-lg-4')}>
                             <InfoCircleOutlined className={'infoIcon'}/>
                             <div className={style.infoValue}>{liveData.minimumInvestment}</div>
                             <div className={style.infoText}>Minimum investment</div>

@@ -10,6 +10,26 @@
     'menu panel panel';
   align-items: center;
 
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      'menu panel'
+      'menu panel'
+      'menu panel'
+      'menu panel';
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'menu'
+      'panel'
+      'panel'
+      'panel'
+      'panel'
+      'panel';
+  }
+
   .panelPie {
     grid-area: menu;
   }
@@ -75,7 +95,6 @@
   justify-content: space-between;
 
   .parameterItem {
-    flex: 1;
     margin-right: 10px;
     &>div {
       padding: 10px;

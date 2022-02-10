@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './Modal.module.scss';
+import style from './Panel.module.scss';
 
 import cn from 'classnames';
 
